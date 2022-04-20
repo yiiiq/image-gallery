@@ -1,9 +1,13 @@
-import { takeEvery } from 'redux-saga/effects';
+import { takeEvery, put } from 'redux-saga/effects';
+import { IMAGES } from '../constants';
 
-function* workereSaga() {
-    console.log('Hey ');
+function* handleImagesLoad() {
+    console.log('fetching images from unsplash');
+}
+function* byeSaga() {
+    console.log('bye bye');
 }
 function* rootSaga() {
-    yield takeEvery('HELLO', workereSaga);
+    yield takeEvery(IMAGES.LOAD, handleImagesLoad);
 }
 export default rootSaga;
